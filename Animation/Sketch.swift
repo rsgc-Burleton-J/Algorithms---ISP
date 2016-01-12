@@ -15,8 +15,10 @@ class Sketch {
     
     // Declare any properties you need for your sketch below this comment, but before init()
     var x : Double = 0
+    var z : Double = 0
     var s = 10
     var y : Double = 0
+    var colour : Float = 0
     
     
     // This runs once, equivalent to setup() in Processing
@@ -48,27 +50,32 @@ class Sketch {
     // Runs repeatedly, equivalent to draw() in Processing
     func draw() {
         
+        z = z + 1
+        colour = colour + 0.3
+        
         // Horizontal position of circle
         //x = x + s
         x = Double(canvas.frameCount)
    
-        y = 0.05*(x-200)*(x-200)+100
+        y = (sin (z)) * 400
+        
+//        y = 0.05*(x-200)*(x-200)+100
         
         
         // Bounce when hitting wall
         if (x > Double(canvas.width) || x < 0) {
             s *= -1
         }
-        
-        if (y < 300) {
-            y = 0.01*(x-200)*(x-200)+200
-            // y = -0.05*(x-200)*(x-200)+200
-        }
-        if (y > 400) {
-            y = -0.01*(x-200)*(x-200)+200
-        }
-        
-        //draw a rect with noe fill
+//        
+//        if (y < 300) {
+//           y = (sin (z)) * 10
+        // y = -0.05*(x-200)*(x-200)+200
+//        }
+//        if (y > 400) {
+//            y = 0.01*(x-200)*(x-200)
+//        }
+//
+        //draw a rect with no fill
         //canvas.drawRectangle(bottomRightX: 50, bottomRightY: 50, width: 200, height: 200)
         
         
@@ -77,8 +84,8 @@ class Sketch {
         
         // Draw a circle that moves across the screen
         canvas.drawShapesWithBorders = false
-        canvas.fillColor = Color(hue: 220, saturation: 100, brightness: 98, alpha: 100)
-        canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 10, height: 10)
+        canvas.fillColor = Color(hue: colour, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 30, height: 30)
         
         
     }
