@@ -15,6 +15,16 @@ class ViewController: NSViewController {
     
     @IBOutlet var canvasView: NSImageCell!
     
+    override func mouseDown(theEvent: NSEvent) {
+        //        print("Mouse Clicked")
+        //        print(theEvent.locationInWindow)
+        
+        // Set the mouseX and mouseY values on the canvas
+        sketch.canvas.mouseX = Float(theEvent.locationInWindow.x)
+        sketch.canvas.mouseY = Float(theEvent.locationInWindow.y)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
