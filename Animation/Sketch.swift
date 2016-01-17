@@ -27,6 +27,7 @@ class Sketch {
     var s = 10
     var y : Double = 0
     var colour : Float = 0
+    var c2 : Float = 0
     //var D = 1
     
     var func1 = 0
@@ -132,6 +133,14 @@ class Sketch {
                 canvas.drawRectangle(bottomRightX: 700, bottomRightY: 250, width: 25 , height: 25)
                 func7 = 1
             }
+            
+            if (Int(canvas.mouseX) > 700 && Int(canvas.mouseX) < 725 && Int(canvas.mouseY) > 200 && Int(canvas.mouseY) < 225) {
+                
+                canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
+                canvas.drawRectangle(bottomRightX: 700, bottomRightY: 200, width: 25 , height: 25)
+                func8 = 1
+            }
+            
             //First Section
             if (Int(canvas.mouseX) > 300 && Int(canvas.mouseX) < 325 && Int(canvas.mouseY) > 350 && Int(canvas.mouseY) < 375) {
                 
@@ -188,7 +197,9 @@ class Sketch {
             }
             }
         z = z + 1
+            if (func8 == 0){
         colour = colour + 0.35
+            }
         let radian = (2*M_PI*z)/360
     
         //for counter in -10...canvas.width {
@@ -296,7 +307,8 @@ class Sketch {
             if (y > 400) {
                 y = 0.01*(x6-200)*(x6-200)
             }
-            canvas.drawEllipse (centreX: Int(x5), centreY: Int(y), width:Size, height: Size)        }
+            canvas.drawEllipse (centreX: Int(x5), centreY: Int(y), width:Size, height: Size)
+        }
         if (func7 == 1) {
             Size = 10
             
@@ -314,6 +326,11 @@ class Sketch {
                 y = (tan(radian)) * 20 + 250
             }
         }
+            if (func8 == 1) {
+                let c2 = arc4random_uniform(360)
+                colour = Float (c2)
+                print(colour)
+                }
         
         
         
