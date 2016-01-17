@@ -70,7 +70,7 @@ class Sketch {
         canvas.drawRectangle(bottomRightX: 700, bottomRightY: 250, width: 25 , height: 25)
         canvas.drawRectangle(bottomRightX: 700, bottomRightY: 200, width: 25 , height: 25)
         
-        canvas.drawRectangle(bottomRightX: 400, bottomRightY: 50, width: 50 , height: 50)
+        canvas.drawRectangle(bottomRightX: 450, bottomRightY: 25, width: 50 , height: 50)
         //Vertical
         
         for i in 0...40 {
@@ -89,15 +89,15 @@ class Sketch {
         canvas.textColor = Color(hue: 225, saturation: 100, brightness: 0, alpha: 100) //Black
         canvas.drawText(message: "Sine Wave (normal)",size: 19, x: 100, y: 345)
         canvas.drawText(message: "Sine Wave (streched)",size: 19, x: 100, y: 295)
-        canvas.drawText(message: "Tan Wave",size: 19, x: 100, y: 245)
-        canvas.drawText(message: "IDGAF",size: 19, x: 100, y: 195)
+        canvas.drawText(message: "Sine Wave (Radial) ",size: 19, x: 100, y: 245)
+        canvas.drawText(message: "Tan Function (Radial)",size: 19, x: 100, y: 195)
         
-        canvas.drawText(message: "ART?",size: 19, x: 600, y: 345)
-        canvas.drawText(message: "ART??",size: 19, x: 600, y: 295)
-        canvas.drawText(message: "ART???",size: 19, x: 600, y: 245)
-        canvas.drawText(message: "ART????",size: 19, x: 600, y: 195)
+        canvas.drawText(message: "Unhappy Face (Parabola)",size: 19, x: 450, y: 345)
+        canvas.drawText(message: "Happy Face (Parabola)",size: 19, x: 450, y: 295)
+        canvas.drawText(message: "Tan Function (Radials)",size: 19, x: 450, y: 245)
+        canvas.drawText(message: "Hack Colours",size: 19, x: 450, y: 195)
         
-        canvas.drawText(message: "ART????",size: 30, x: 400, y: 100)
+        canvas.drawText(message: "Draw Selected Functions",size: 30, x: 315, y: 95)
         
 
         
@@ -161,17 +161,12 @@ class Sketch {
                 func4 = 1
             }
             
+            //Continue Button
             
-            if (Int(canvas.mouseX) > 400 && Int(canvas.mouseX) < 450 && Int(canvas.mouseY) > 50 && Int(canvas.mouseY) < 100) {
+            if (Int(canvas.mouseX) > 450 && Int(canvas.mouseX) < 500 && Int(canvas.mouseY) > 25 && Int(canvas.mouseY) < 75) {
                 
-                canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
-                canvas.drawRectangle(bottomRightX: 400, bottomRightY: 50, width: 50 , height: 50)
                 screen = 2
             }
-
-            
-            
-            
         }
         
         if (screen == 2) {
@@ -250,7 +245,7 @@ class Sketch {
         }
         
         if (func3 == 1){
-            Size = 5
+            Size = 20
             y = (sin(z)) * 400
             canvas.drawEllipse (centreX: Int(x3), centreY: Int(y), width:Size, height: Size)
             
@@ -296,10 +291,10 @@ class Sketch {
             Size = 20
             y = 0.1*(x6-200)*(x6-200)+200
             if (y < 300) {
-                y = 0.05*(x6-200)*(x6-200)
+                y = 0.05*(x6-200)*(x6-200)+100
             }
             if (y > 400) {
-                y = 0.01*(x6-200)*(x6-200)+100
+                y = 0.01*(x6-200)*(x6-200)
             }
             canvas.drawEllipse (centreX: Int(x5), centreY: Int(y), width:Size, height: Size)        }
         if (func7 == 1) {
