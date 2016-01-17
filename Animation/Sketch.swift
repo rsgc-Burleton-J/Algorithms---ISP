@@ -15,12 +15,19 @@ class Sketch {
     let canvas : Canvas
     
     // Declare any properties you need for your sketch below this comment, but before init()
-    var x : Double = 0
+    var x: Double = 0
+    var x1: Double = 0
+    var x2: Double = 0
+    var x3: Double = 0
+    var x4: Double = 0
+    var x5: Double = 0
+    var x6: Double = 0
+    var x7: Double = 0
     var z : Double = 0
     var s = 10
     var y : Double = 0
     var colour : Float = 0
-    var D = 1
+    //var D = 1
     
     var func1 = 0
     var func2 = 0
@@ -34,7 +41,7 @@ class Sketch {
     var Size = 0
     var counter = 0
     var screen = 1
-    var firstT = 0
+    var firstT = 1
     
     
     // This runs once, equivalent to setup() in Processing
@@ -63,7 +70,7 @@ class Sketch {
         canvas.drawRectangle(bottomRightX: 700, bottomRightY: 250, width: 25 , height: 25)
         canvas.drawRectangle(bottomRightX: 700, bottomRightY: 200, width: 25 , height: 25)
         
-        canvas.drawRectangle(bottomRightX: 700, bottomRightY: 200, width: 25 , height: 25)
+        canvas.drawRectangle(bottomRightX: 400, bottomRightY: 50, width: 50 , height: 50)
         //Vertical
         
         for i in 0...40 {
@@ -111,22 +118,19 @@ class Sketch {
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 700, bottomRightY: 350, width: 25 , height: 25)
                 func5 = 1
-                firstT = 1
             }
             if (Int(canvas.mouseX) > 700 && Int(canvas.mouseX) < 725 && Int(canvas.mouseY) > 300 && Int(canvas.mouseY) < 325) {
                 
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 700, bottomRightY: 300, width: 25 , height: 25)
                 func6 = 1
-                firstT = 1
             }
 
-            if (Int(canvas.mouseX) > 700 && Int(canvas.mouseX) < 725 && Int(canvas.mouseY) > 250 && Int(canvas.mouseY) < 375) {
+            if (Int(canvas.mouseX) > 700 && Int(canvas.mouseX) < 725 && Int(canvas.mouseY) > 250 && Int(canvas.mouseY) < 275) {
                 
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 700, bottomRightY: 250, width: 25 , height: 25)
                 func7 = 1
-                firstT = 1
             }
             //First Section
             if (Int(canvas.mouseX) > 300 && Int(canvas.mouseX) < 325 && Int(canvas.mouseY) > 350 && Int(canvas.mouseY) < 375) {
@@ -134,7 +138,6 @@ class Sketch {
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 300, bottomRightY: 350, width: 25 , height: 25)
                 func1 = 1
-                firstT = 1
             }
 
             if (Int(canvas.mouseX) > 300 && Int(canvas.mouseX) < 325 && Int(canvas.mouseY) > 300 && Int(canvas.mouseY) < 325) {
@@ -142,7 +145,6 @@ class Sketch {
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 300, bottomRightY: 300, width: 25 , height: 25)
                 func2 = 1
-                firstT = 1
             }
 
             if (Int(canvas.mouseX) > 300 && Int(canvas.mouseX) < 325 && Int(canvas.mouseY) > 250 && Int(canvas.mouseY) < 275) {
@@ -150,7 +152,6 @@ class Sketch {
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 300, bottomRightY: 250, width: 25 , height: 25)
                 func3 = 1
-                firstT = 1
             }
             
             if (Int(canvas.mouseX) > 300 && Int(canvas.mouseX) < 325 && Int(canvas.mouseY) > 200 && Int(canvas.mouseY) < 225) {
@@ -158,8 +159,18 @@ class Sketch {
                 canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
                 canvas.drawRectangle(bottomRightX: 300, bottomRightY: 200, width: 25 , height: 25)
                 func4 = 1
-                firstT = 1
             }
+            
+            
+            if (Int(canvas.mouseX) > 400 && Int(canvas.mouseX) < 450 && Int(canvas.mouseY) > 50 && Int(canvas.mouseY) < 100) {
+                
+                canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 100, alpha: 100)
+                canvas.drawRectangle(bottomRightX: 400, bottomRightY: 50, width: 50 , height: 50)
+                screen = 2
+            }
+
+            
+            
             
         }
         
@@ -190,7 +201,15 @@ class Sketch {
         
         // Horizontal position of circle
         //x = x + s
-        x = Double(canvas.frameCount)
+        x1 = x1 + 1
+        x2 = x2 + 1
+        x3 = x3 + 1
+        x4 = x4 + 1
+        x5 = x5 + 1
+        x6 = x6 + 1
+        x7 = x7 + 1
+
+
         
         //y = (sin(z))
         
@@ -201,14 +220,14 @@ class Sketch {
             Size = 5
             
             y = (sin(radian)) * 200 + 250
-            print(y)
+            canvas.drawEllipse (centreX: Int(x1), centreY: Int(y), width:Size, height: Size)
             
-            if (x > 1000){
-                x = 0
+            if (x1 > 1000){
+                x1 = 0
                 counter = counter + 1
             }
             if (counter > 0){
-                x = z - (1000)
+                x1 = z - (1000)
                 
                 y = (sin(radian)) * 100 + 250
             }
@@ -217,14 +236,14 @@ class Sketch {
         if (func2 == 1){
             Size = 5
             y = ((1/4)*sin(radian)) * 200 + 250
-            print(x)
+            canvas.drawEllipse (centreX: Int(x2), centreY: Int(y), width:Size, height: Size)
             
-            if (x > 1000){
-                x = 0
+            if (x2 > 1000){
+                x2 = 0
                 counter = counter + 1
             }
             if (counter > 0){
-                x = z - (1000)
+                x2 = z - (1000)
                 
                 y = ((1/2)*sin(radian)) * 200 + 250
             }
@@ -233,13 +252,14 @@ class Sketch {
         if (func3 == 1){
             Size = 5
             y = (sin(z)) * 400
+            canvas.drawEllipse (centreX: Int(x3), centreY: Int(y), width:Size, height: Size)
             
-            if (x > 1000){
-                x = 0
+            if (x3 > 1000){
+                x3 = 0
                 counter = counter + 1
             }
             if (counter > 0){
-                x = z - (1000)
+                x3 = z - (1000)
                 
                 y = ((1/2)*sin(z)) * 400
             }
@@ -248,13 +268,14 @@ class Sketch {
         if (func4 == 1){
             Size = 20
             y = (tan(z)) * 400
+            canvas.drawEllipse (centreX: Int(x4), centreY: Int(y), width:Size, height: Size)
             
-            if (x > 1000){
-                x = 0
+            if (x4 > 1000){
+                x4 = 0
                 counter = counter + 1
             }
             if (counter > 0){
-                x = z - (1000)
+                x4 = z - (1000)
                 
                 y = ((2)*tan(z)) * 400
             }
@@ -262,38 +283,38 @@ class Sketch {
         }
         if (func5 == 1) {
             Size = 20
-            y = 0.1*(x-200)*(x-200)+200
+            y = 0.1*(x5-200)*(x5-200)+100
             if (y < 300) {
-                y = (sin (z)) * 10
-                y = -0.05*(x-200)*(x-200)+200
+                y = -0.05*(x5-200)*(x5-200)+200
             }
             if (y > 400) {
-                y = 0.01*(x-200)*(x-200)
+                y = 0.01*(x5-200)*(x5-200)
             }
+            canvas.drawEllipse (centreX: Int(x5), centreY: Int(y), width:Size, height: Size)
         }
         if (func6 == 1) {
             Size = 20
-            y = 0.1*(x-200)*(x-200)+200
+            y = 0.1*(x6-200)*(x6-200)+200
             if (y < 300) {
-                y = (sin (z)) * 10
-                y = 0.05*(x-200)*(x-200)+200
+                y = 0.05*(x6-200)*(x6-200)
             }
             if (y > 400) {
-                y = 0.01*(x-200)*(x-200)
+                y = 0.01*(x6-200)*(x6-200)+100
             }
-        }
+            canvas.drawEllipse (centreX: Int(x5), centreY: Int(y), width:Size, height: Size)        }
         if (func7 == 1) {
             Size = 10
             
             y = (tan(radian)) * 100 + 250
-            print(y)
+            canvas.drawEllipse (centreX: Int(x7), centreY: Int(y), width:Size, height: Size)
+
             
-            if (x > 1000){
-                x = 0
+            if (x7 > 1000){
+                x7 = 0
                 counter = counter + 1
             }
             if (counter > 0){
-                x = z - (1000)
+                x7 = z - (1000)
                 
                 y = (tan(radian)) * 20 + 250
             }
@@ -325,8 +346,7 @@ class Sketch {
         // Draw a circle that moves across the screen
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color(hue: colour, saturation: 100, brightness: 100, alpha: 100)
-        canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width:Size, height: Size)
-        
+       // canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width:Size, height: Size)
         
         }
     }
