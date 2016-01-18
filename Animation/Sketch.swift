@@ -89,7 +89,7 @@ class Sketch {
         //Show text for choosing animations
         //Select Colour and Sizing
         canvas.textColor = Color(hue: 225, saturation: 100, brightness: 0, alpha: 100) //Black
-        canvas.drawText(message: "Choose The Function Which You Would Like to View",size: 35, x: 100, y: 445) //Title
+        canvas.drawText(message: "Select The Function(s) Which You Would Like to View",size: 35, x: 100, y: 445) //Title
         canvas.textColor = Color(hue: 225, saturation: 100, brightness: 0, alpha: 100) //Black
         
         //Left side messages
@@ -101,7 +101,7 @@ class Sketch {
         //Right side messages
         canvas.drawText(message: "Unhappy Face (Parabola)",size: 19, x: 450, y: 345)
         canvas.drawText(message: "Happy Face (Parabola)",size: 19, x: 450, y: 295)
-        canvas.drawText(message: "Tan Function (Radials)",size: 19, x: 450, y: 245)
+        canvas.drawText(message: "Tan Function (Degrees)",size: 19, x: 450, y: 245)
         canvas.drawText(message: "Hack Colours",size: 19, x: 450, y: 195)
         
         //Select feature message

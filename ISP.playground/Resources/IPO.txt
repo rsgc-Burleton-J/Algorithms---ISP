@@ -1,0 +1,33 @@
+IPO:
+
+
+Input:
+
+The input of my code is determined on screen 1 of the 2 screen setup.  The user of the program selects the function(s) they would like to display by clicking the boxes next to the corresponding titles.  In total, there are 7 possible functions that can be displayed, as well as a “Hack Colour” selection, which will enable a random colour generator.  This makes the colours of each circle in each function different.  
+
+Initially, my idea involved creating a sine wave generator, however, after completing this, I soon discovered that just doing this was too easy to be considered my entire ISP.  I then decided I wanted to create a variety of different patterns through the use of mathematical algorithms, due to the fact that this was our “algorithms ISP”.  I next decided to create a parabola, and once I had completed this, I made a two faces (happy and sad) using this single parabola: this to prove I understand all the elements of how the parabola is made.  After this, I decided to return to the patterns I had discovered before I was able to complete my sine wave.  As Swift uses radials rather than degrees, I had to covert the radial numbers into degrees by deriving a formula. Instead of implementing this in all of my functions, I decided to use radials with the Sine and Tan functions, as it created cool patterns.  
+
+Once this was complete, I had to create my 2 screen setup, which was the most difficult and most time consuming part of this code.  In order to do this, I setup the first screen in INIT, and then used the draw feature in order to allow the boxes to be “clickable”.  Once continue had been selected, screen two (also in draw) would appear, containing the previously selected functions.
+
+
+Process:
+
+The code first runs the INIT function, where it sets up the background with the text and boxes.  After screen one has been set up, the draw function begins, where the code begins to react to the user’s input.  The user will “click” on the boxes representing the functions they want to see, and these boxes will turn red.  By clicking the boxes, the code changes the value of that function from 0 to 1, or basically, from false to true.  Now the code knows to display the selected function when screen two is enabled.
+
+Once the functions have been selected, and the user selects the “Draw Selected Functions” box, the code switches the screen from screen 1 to screen 2.  On screen 2, the code will proceed to draw circles at 100 FPS from left to right, based off of which functions have been selected for display.  
+
+In each function, there are mathematical formulas to determine the Y position of each circle, creating the pattern.  All of the functions have their own X values, which all cross the screen at the same rate.  This is so that multiple functions can be displayed at once, without messing up the processing of the code.  
+
+Once the functions have reached the right edge of the screen, the x value is reset to 0.  However, because if this is done too much, none of the functions can be seen, I have coded this so that it only happens once, meaning the function only go across the screen a maximum of two times (excluding the parabolas, which only go once).  
+
+The last element to the “process” is the eighth box on screen 1, which enables a random number generator from 0-360, directly corresponding to the colours of the circles.
+
+
+Output:
+
+The output from this code depends on the input given by the user.  Keeping this in mind, the output is the selected functions being drawn across the screen, 1 pixel at a time.  The output can represent only one of the functions, or it can represent any combination, up to all seven.  The code outputs different Y values for each of the functions, which is what gives them all their respective varying appearances.  They all travel at the same speed across the screen as the X values increase at the same rate for each function.
+
+
+
+
+
